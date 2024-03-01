@@ -13,7 +13,5 @@ Future<Ip> getIp() async {
   final url = Uri.parse(stringUrl);
   final res = await http.get(url);
 
-  final Map<String, dynamic> data = json.decode(res.body);
-
-  return Ip.fromMap(data);
+  return Ip.fromJson(res.body);
 }
